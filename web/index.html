@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="scripts/blockly/blockly_compressed.js"></script>
+  <script src="scripts/git/blockly/blocks_compressed.js"></script>
+  <script src="scripts/git/blockly/msg/js/fr.js"></script>
+  <script src="scripts/blockly/blocks/ansibleBlocksDef.js"></script>
+  <script src="scripts/blockly/generators/ansible.js"></script>
+  <script src="scripts/blockly/generators/ansible/ansibleBlocksGenerator.js"></script>
+
+  <div id="text">
+    <p>
+      <h2>Sauver le modèle</h2>
+      <label for="fileName">Nom du fichier à générer</label>
+      <input type="text" name="fileName" id="fileName"/>
+      <button id="generateButton">Générer le code</button>
+      <button id="generateXml">Sauver les blocs du modèle</button>
+    </p>
+    <p>
+      <h2>Importer un modèle</h2>
+      <input type="file" name="importedFile" id="importedFile"/>
+      <button id="importButton">Importer un fichier XML</button>
+    </p>
+  </div>
+  <div id="blocklyArea"></div>
+  <div id="blocklyDiv" style="position: absolute"></div>
+  <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+  <category name="Générique" colour="#a55b5b">
+    <block type="block_connection">
+      <field name="connection_hosts">all</field>
+      <field name="connection_become">FALSE</field>
+      <field name="connection_become_method">su</field>
+    </block>
+  </category>
+  <category name="Tâches" colour="#5b5ba5">
+    <block type="block_tasks"></block>
+    <block type="task_definition">
+      <field name="task_name">default</field>
+    </block>
+  </category>
+  <category name="Actions" colour="#5ba55b">
+    <block type="action_update">
+      <field name="installation_method">apt</field>
+      <field name="packet_name"></field>
+      <field name="update_cache">FALSE</field>
+    </block>
+    <block type="action_unarchive">
+      <field name="unarchive_src"></field>
+      <field name="unarchive_dest"></field>
+      <field name="unarchive_change_properties">FALSE</field>
+      <field name="unarchive_user">default</field>
+      <field name="unarchive_group">default</field>
+    </block>
+    <block type="action_lineinfile">
+      <field name="lineinfile_path"></field>
+      <field name="lineinfile_line">default</field>
+    </block>
+    <block type="action_user">
+      <field name="user_username"></field>
+      <field name="user_comment"></field>
+      <field name="user_password"></field>
+    </block>
+    <block type="action_shell">
+      <field name="shell_shell"></field>
+    </block>
+  </category>
+</xml>
+
+ <script src="scripts/editor.js"></script>
+</html>

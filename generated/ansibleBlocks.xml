@@ -1,0 +1,594 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><block type="factory_base" id="6#j9Bk;v4m+-);1879Sc" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="TOP"></mutation>
+    <field name="NAME">action_update</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">TOP</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="bSc{sBgjKSn}UrWsD@qU">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="$)Djp2#3cym8,Z0kU2Ie">
+            <field name="TEXT">Installation</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_dummy" id="Ka)faF1gVuoCA8)M{iWL">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="a6oh]!10)gZ}jr[!hSgS">
+                <field name="TEXT">Méthode</field>
+                <next>
+                  <block type="field_dropdown" id="b4d{0/)SKF_3Fbqpr)So">
+                    <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+                    <field name="FIELDNAME">installation_method</field>
+                    <field name="USER0">apt</field>
+                    <field name="CPU0">apt</field>
+                    <field name="USER1">yum</field>
+                    <field name="CPU1">yum</field>
+                    <next>
+                      <block type="field_static" id="r]y`@lU?;{D0tsbY`Wt=">
+                        <field name="TEXT">Paquet</field>
+                        <next>
+                          <block type="field_input" id="Xywor-~-}/dbQWD5;lnO">
+                            <field name="TEXT"></field>
+                            <field name="FIELDNAME">packet_name</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="input_dummy" id="k.),3DTxyDY~7xVWYm@c">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="waBzkEa7:iyQjVCi}vRm">
+                    <field name="TEXT">Mettre à jour les dépôts</field>
+                    <next>
+                      <block type="field_checkbox" id="6-g?TL%ua*KZ6kdj[m_}">
+                        <field name="CHECKED">FALSE</field>
+                        <field name="FIELDNAME">update_cache</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="Bc+$L~wOw{lC+_2q=EdQ" deletable="false" movable="false">
+        <field name="TEXT">Définition d'une tâche d'installation / mise à jour d'un paquet</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="HGfa]SpJW+)@W`M6SA.0" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="}+q-yB/`8l{.hjTeG$4Y"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="P{zy1}|uup1*)n@C)Gwj">
+        <mutation colour="#5ba58c"></mutation>
+        <field name="HUE">160</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="{atZ{u/`SB-b7uI^*@~%" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">task_definition</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id=".A=2o2]:BT!Pqw?@gcJG">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="N!Onb:1.0o0`Od|R-n4`">
+            <field name="TEXT">Nom</field>
+            <next>
+              <block type="field_input" id="Sya*j@nx$gQ6g`wxaEgW">
+                <field name="TEXT">default</field>
+                <field name="FIELDNAME">task_name</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_statement" id="|*s{/j:kUy.wAWMn=[d+">
+            <field name="INPUTNAME">action</field>
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="jIQq!*v!:}-I*@wPL]l/">
+                <field name="TEXT">Action</field>
+              </block>
+            </statement>
+            <value name="TYPE">
+              <shadow type="type_null" id="Z~nAtL|3yRWlp`U$F+BU"></shadow>
+              <block type="type_group" id="FRxRv;#B;YiQ?fc,C@Ph">
+                <mutation types="5"></mutation>
+                <value name="TYPE0">
+                  <block type="type_other" id="3AZvH%qQq6c#_tURyEmM">
+                    <field name="TYPE">action_update</field>
+                  </block>
+                </value>
+                <value name="TYPE1">
+                  <block type="type_other" id="3E;`|cB;Z^~,b+K@:,At">
+                    <field name="TYPE">action_unarchive</field>
+                  </block>
+                </value>
+                <value name="TYPE2">
+                  <block type="type_other" id="wMYxd{^bdzl)(13DE9z,">
+                    <field name="TYPE">action_lineinfile</field>
+                  </block>
+                </value>
+                <value name="TYPE3">
+                  <block type="type_other" id=",qCWlL1sw=wAsm!Q;#/=">
+                    <field name="TYPE">action_shell</field>
+                  </block>
+                </value>
+                <value name="TYPE4">
+                  <block type="type_other" id="L+5]cwRz]|ml-?8D}`/L">
+                    <field name="TYPE">action_user</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="OgQOHgmOSoAclbw[[]g?" deletable="false" movable="false">
+        <field name="TEXT">Définition d'une tâche</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="R=9J4!~]So3/r$C7KTXQ" deletable="false" movable="false">
+        <field name="TEXT">https://docs.ansible.com/ansible/2.6/user_guide/playbooks_intro.html</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="DKnM:!E;m2r++g%_W}Dx"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="(4hDa,#8BSDe4r^]d=mH"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="X{|-zTbg51iUV[m]ok,H">
+        <mutation colour="#5b67a5"></mutation>
+        <field name="HUE">230</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="5U)9X(#=L+~pUT|C+(?r" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTH"></mutation>
+    <field name="NAME">block_tasks</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTH</field>
+    <statement name="INPUTS">
+      <block type="input_statement" id="C|z7UK|oX`.IXhXdOW8m">
+        <field name="INPUTNAME">NAME</field>
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="d$$h-C01CqQgW+9vj#NY">
+            <field name="TEXT">Tâches</field>
+          </block>
+        </statement>
+        <value name="TYPE">
+          <shadow type="type_null" id="IWK5|$`?=Z3VXm#3G!k6"></shadow>
+          <block type="type_other" id="WCXq}`/XpS[eC{|9[DE|">
+            <field name="TYPE">task_definition</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="[|./tpE/z#(5%b(`82SF" deletable="false" movable="false">
+        <field name="TEXT">Bloc pour définir les tâches à réaliser</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="@-KEH;+lsd$AYp/=xKV]" deletable="false" movable="false">
+        <field name="TEXT">https://docs.ansible.com/ansible/2.6/user_guide/playbooks_intro.html</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id=".Ze*qNB(=0CF{Foa|E;5"></shadow>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="c[h/1rZTkJJ92?6Aj7Wm"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="*N(@R@=y:is;F,OOzD!f">
+        <mutation colour="#a55b80"></mutation>
+        <field name="HUE">330</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="Pamdp4V]Y#N]Xd8Zwaar" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="TOP"></mutation>
+    <field name="NAME">action_unarchive</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">TOP</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="!Qlb`PSr#R|Tf%vSl{Lo">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="fO6I%TvBhtX1d:l.eR1H">
+            <field name="TEXT">Charger un fichier d'archive</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_dummy" id="Fd=f1vNRJ;9eiy:3S}4;">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="lo?hizHf1*#9=V3t!ECy">
+                <field name="TEXT">Fichier source</field>
+                <next>
+                  <block type="field_input" id="ExEm;G?r48RroZ^WLW.~">
+                    <field name="TEXT"></field>
+                    <field name="FIELDNAME">unarchive_src</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="input_dummy" id="1gaP.,otmt{m+[ivTnW7">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="csYZ@T{KD!9G8-(w-A:b">
+                    <field name="TEXT">Destination</field>
+                    <next>
+                      <block type="field_input" id="qq;`qgpY%uPd|Y;[_do_">
+                        <field name="TEXT"></field>
+                        <field name="FIELDNAME">unarchive_dest</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="input_dummy" id="Z5z]+pi5bpc4mVhsr{:;">
+                    <field name="ALIGN">LEFT</field>
+                    <statement name="FIELDS">
+                      <block type="field_static" id="f*[=p7PIJ!Z:c/ddN!fm">
+                        <field name="TEXT">Changer les propriétés du fichier</field>
+                        <next>
+                          <block type="field_checkbox" id="xD3IFUGAJ7}~aRPvb1io">
+                            <field name="CHECKED">FALSE</field>
+                            <field name="FIELDNAME">unarchive_change_properties</field>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="input_dummy" id="L#01o26CZLFgQMZ%v/S9">
+                        <field name="ALIGN">LEFT</field>
+                        <statement name="FIELDS">
+                          <block type="field_static" id="8)pv^^z)]t2_c`GJblN/">
+                            <field name="TEXT">Propriétaire</field>
+                            <next>
+                              <block type="field_input" id="o|8dH:xUuMpu%m4hLA9!">
+                                <field name="TEXT">default</field>
+                                <field name="FIELDNAME">unarchive_user</field>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="input_dummy" id="{[SJdhl{OqT~.w.)S^._">
+                            <field name="ALIGN">LEFT</field>
+                            <statement name="FIELDS">
+                              <block type="field_static" id="3Gt)w;pX|NrYmFWCmkh?">
+                                <field name="TEXT">Groupe</field>
+                                <next>
+                                  <block type="field_input" id="QK.$`Wa(|i{M60:mv8;8">
+                                    <field name="TEXT">default</field>
+                                    <field name="FIELDNAME">unarchive_group</field>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="N6Yxhq_/gHx6[1uEQa|," deletable="false" movable="false">
+        <field name="TEXT">Définition d'une action de copie et désarchivage d'un fichier archive</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="`l}Wz[nnlkj|#5SxU%Kz" deletable="false" movable="false">
+        <field name="TEXT">https://docs.ansible.com/ansible/2.6/modules/unarchive_module.html?highlight=unarchive</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="75n|CXNl3SItJA)[WWpa"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="ZDs6I8f6H5btP[ATkqKK">
+        <mutation colour="#5ba58c"></mutation>
+        <field name="HUE">160</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="53?naB|G7Qb:lXn@[.GT" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="TOP"></mutation>
+    <field name="NAME">action_lineinfile</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">TOP</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="{FfEopZg^^/IVl!,.*bO">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="[/-(7eTgc6ApQ,(j/Ag7">
+            <field name="TEXT">Ecrire une ligne dans un fichier</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_dummy" id="fI6m2e1`kbxWm3gG|-8M">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="I1|R#RVW`ECg_ba^SqKv">
+                <field name="TEXT">Fichier</field>
+                <next>
+                  <block type="field_input" id="5EZ5KvknaMlTfPB4xAW^">
+                    <field name="TEXT"></field>
+                    <field name="FIELDNAME">lineinfile_path</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="input_dummy" id="pULX%u5R[a}|M{N-d9zI">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="}(/vW/:d;#fTu^{-0WQc">
+                    <field name="TEXT">Ligne à écrire</field>
+                    <next>
+                      <block type="field_input" id="]Ngr7lO^BAC(wbT[|:)T">
+                        <field name="TEXT">default</field>
+                        <field name="FIELDNAME">lineinfile_line</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="`#L`@-Cj`;?[324t9;6(" deletable="false" movable="false">
+        <field name="TEXT">Ajouter une ligne dans un fichier</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="8GHX|mcG)887ao5R#P4J" deletable="false" movable="false">
+        <field name="TEXT">https://docs.ansible.com/ansible/2.6/modules/lineinfile_module.html?highlight=lineinfile</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="1nHLehaI.MfggKbzO+%?"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id=")-35~VV:c!%)#*}Q?CX{">
+        <mutation colour="#5ba58c"></mutation>
+        <field name="HUE">160</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="X{$gKRS{Ge7jZ:{iY-^C" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="TOP"></mutation>
+    <field name="NAME">action_user</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">TOP</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="CAbAE*D3uw#iAHN_Ur;}">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="adF/)0[Lt=cm`oWL{6Wl">
+            <field name="TEXT">Ajouter un utilisateur</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_dummy" id="k,~:3ZkDWIrnIo=n)$,1">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="?#]xkhP6IQEpOFk8h6m-">
+                <field name="TEXT">Nom de l'utilisateur</field>
+                <next>
+                  <block type="field_input" id="#7w9[y`8Z^0z)alo(i=H">
+                    <field name="TEXT"></field>
+                    <field name="FIELDNAME">user_username</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="input_dummy" id="/`#Q9~lRX=gz3SckGGl2">
+                <field name="ALIGN">LEFT</field>
+                <statement name="FIELDS">
+                  <block type="field_static" id="!^5.WKX0}|#WA`L_lq`W">
+                    <field name="TEXT">Commentaire</field>
+                    <next>
+                      <block type="field_input" id="G@k|p(p;6KC1p^,=bLk5">
+                        <field name="TEXT"></field>
+                        <field name="FIELDNAME">user_comment</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="input_dummy" id="q8uoa@_8|9Tji$D];~Jm">
+                    <field name="ALIGN">LEFT</field>
+                    <statement name="FIELDS">
+                      <block type="field_static" id="rI:kwVa@U}){*G]{4dA*">
+                        <field name="TEXT">Mot de passe</field>
+                        <next>
+                          <block type="field_input" id="qls;|l3tV8rZ|:2g*j?(">
+                            <field name="TEXT"></field>
+                            <field name="FIELDNAME">user_password</field>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="lS[Vi]XwyljeRl:nsr:I" deletable="false" movable="false">
+        <field name="TEXT">Ajouter un utilisateur</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="8d6$E98/lQlN?G$BF+l_" deletable="false" movable="false">
+        <field name="TEXT">https://docs.ansible.com/ansible/2.6/modules/user_module.html?highlight=user</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="OPGy@{n{]pYXH14Yt#S7"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="4#_d=7rS8UOvV4=B5V*T">
+        <mutation colour="#5ba58c"></mutation>
+        <field name="HUE">160</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="ouIR=,@d5EoRkZJ?b(C6" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="TOP"></mutation>
+    <field name="NAME">action_shell</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">TOP</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="*g~=`kq$qA?O:#:d^y=E">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="RvVBwM^D$l8!].,DO!Dh">
+            <field name="TEXT">Lancer une commande Shell</field>
+          </block>
+        </statement>
+        <next>
+          <block type="input_dummy" id="h{({7asF=c+/:`*p^J3w">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="Z77wqNLnCi}3K-Kq[:9Q">
+                <field name="TEXT">Commande</field>
+                <next>
+                  <block type="field_input" id="jMW(H((:mUGKLAr,pUau">
+                    <field name="TEXT"></field>
+                    <field name="FIELDNAME">shell_shell</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="6JAZ,w^-1WztL-;Oi=#y" deletable="false" movable="false">
+        <field name="TEXT">Faire exécuter une commande Shell</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="lhX7Zcu9Y{-{LUt$jjOZ" deletable="false" movable="false">
+        <field name="TEXT">https://docs.ansible.com/ansible/2.6/modules/shell_module.html?highlight=shell</field>
+      </block>
+    </value>
+    <value name="TOPTYPE">
+      <shadow type="type_null" id="JA1T`28j/q+WJ3zJG(7Q"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="UyC3XzkuZjn)QFGYT@Me">
+        <mutation colour="#5ba58c"></mutation>
+        <field name="HUE">160</field>
+      </block>
+    </value>
+  </block><block type="factory_base" id="HT|2VQg,/Xoef_]_9zO]" deletable="false" movable="false" x="10" y="10">
+    <mutation connections="BOTTOM"></mutation>
+    <field name="NAME">block_connection</field>
+    <field name="INLINE">AUTO</field>
+    <field name="CONNECTIONS">BOTTOM</field>
+    <statement name="INPUTS">
+      <block type="input_dummy" id="0f!g^Ad[l4PH{-Uo,Som">
+        <field name="ALIGN">LEFT</field>
+        <statement name="FIELDS">
+          <block type="field_static" id="0zm{GYn/d]9R@5tC~maw">
+            <field name="TEXT">Connection à</field>
+            <next>
+              <block type="field_input" id="t/POdX8.x*cu-*RcQ@@e">
+                <field name="TEXT">all</field>
+                <field name="FIELDNAME">connection_hosts</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="input_dummy" id="|D1A5x~rY@ngeCV7B]^)">
+            <field name="ALIGN">LEFT</field>
+            <statement name="FIELDS">
+              <block type="field_static" id="0xZg3Wd+$`ok}^;-mM,w">
+                <field name="TEXT">Devenir administrateur</field>
+                <next>
+                  <block type="field_checkbox" id="v{J$Xe`O6wiQGhtp!iK2">
+                    <field name="CHECKED">FALSE</field>
+                    <field name="FIELDNAME">connection_become</field>
+                    <next>
+                      <block type="field_static" id="lmy)~+Gp`7_f4G~^`ieS">
+                        <field name="TEXT">méthode</field>
+                        <next>
+                          <block type="field_dropdown" id="+e9phTCN66#IkQTrxFuD">
+                            <mutation options="[&quot;text&quot;,&quot;text&quot;]"></mutation>
+                            <field name="FIELDNAME">connection_become_method</field>
+                            <field name="USER0">su</field>
+                            <field name="CPU0">su</field>
+                            <field name="USER1">sudo</field>
+                            <field name="CPU1">sudo</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <value name="TOOLTIP">
+      <block type="text" id="E,1/EXE-wllD!fg7nj[A" deletable="false" movable="false">
+        <field name="TEXT">Informations de connections</field>
+      </block>
+    </value>
+    <value name="HELPURL">
+      <block type="text" id="1g)$U/Qt,z:U:g,S9TE^" deletable="false" movable="false">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="BOTTOMTYPE">
+      <shadow type="type_null" id="^1H)5~rCQ#TEZ;3_px!Q"></shadow>
+    </value>
+    <value name="COLOUR">
+      <block type="colour_hue" id="Dj638L)9_*Ig?d)BXAMZ">
+        <mutation colour="#a5745b"></mutation>
+        <field name="HUE">20</field>
+      </block>
+    </value>
+  </block></xml>
